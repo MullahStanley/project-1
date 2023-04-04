@@ -33,5 +33,12 @@ function appendCarousel(meals){
 
 //fetching
 function fetchMeals(meals){
-    fetch("")
+    fetch("http://localhost:3000/meals")
+    .then(res => res.json())
+    .then(data =>()=>{
+        data.array.forEach(meals => {
+            appendCarousel(meals)
+        });
+    })
+
 }
