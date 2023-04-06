@@ -25,7 +25,8 @@ function fetchMeals(){
     })
 }
 fetchMeals()
-//event listeners
+
+//table for displaying data
 function forms(meals){
   let tableRow= document.createElement("tr")
   tableRow.id= "table-row"
@@ -37,5 +38,62 @@ function forms(meals){
   <td><button class="btn" style="background-colour:green;" id="edit">Review</button></td>
   <td><button class="btn" style="background-colour:red;" id="delete">Review</button></td>
   `
+  document.querySelector("#table-body").append(tableRow)
+  tableRow.querySelector("#edit").addEventListener("click",()=>{
+    updateMeals(meals.id)
+  })
+  tableRow.querySelector("delete").addEventListener("click",()=>{
+    tableRow.remove()
+    deleteRecord(product.id)
+  })
+}
+//collect form data
+function gatherInfo(){
+  let form= document.querySelector("#form")
+  form.addEventListener("submit",(event)=>{
+    event.preventDefault()
+    let formData= {
+      name: event.target.name.value,
+      country: event.target.country.value,
+      image:event.target.image.value,
+      description:event.target.description.value
+    }
+    postMeals()
+  })
+}
+gatherInfo();
 
+//POST
+function postMeals(){
+  fetch(`${base_src}`,{
+    method: "POST",
+    headers: {
+      "Content-Type":"application/json"
+    }
+  })
+  .then(response => response.json())
+  .then(data=>console.log(data))
+}
+//updating meals
+function updateMeals(){
+  fetch(`${base_src}`,{
+    method: "PATCH",
+    headers: {
+      "Content-Type":"application/json"
+    },
+    body : JSON.stringify()
+  })
+  .then(res=>res.json())
+  .then(data=>console.log(data))
+}
+//deleting meals
+function deleteRecord(){
+  fetch(`${base_src}`,{
+    method: "DELETE",
+    headers:{
+      "Content-Type": "application/json"
+    }
+  })
+  .then (res=> res.json())
+  .then (data=>console.log(data))
 }
