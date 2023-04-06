@@ -5,8 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/b9ef00f2d4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="main.html">FoodCulture</a>
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="table/table.html">Form</a>
+            </div>
+        </div>
+      </nav>
+    <section>
     <div id="main">
         <div>
             <h1>What is food culture?</h1>
@@ -16,14 +28,10 @@
                 
                 Because food is such an important part of our heritage and ethnicity, traditional foods and recipes play a key role in our food culture. When we sit down with friends and family to enjoy a meal together, we are literally ‘breaking bread’ with them.
                 
-                On a subconscious level, we/'re tapping into centuries of food cultures and traditions.</p>
+                On a subconscious level, we/'re tapping into centuries of food cultures and traditions. <b>ADD ONE OF YOUR OWN! <i class="fa-solid fa-arrow-down"></i></b></p>
         </div>
-        <div id="div-1">
-
-        </div>
-    </div>
-    <section id="section">
-        <form id="form">
+        <section id="section">
+            <form id="form">
             <div>
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" required>
@@ -41,12 +49,17 @@
                 <input type="text" class="form-control" id="name" required>
             </div>
             <div>
-                <button type="submit">Add</button>
+                <button class="button" type="submit">Add</button>
             </div>
-        </form>
+            </form>
+        </section>
+        <div id="div-1" class="card">
+
+        </div>
+        </div>
     </section>
     <section>
-        <table class="table mt-4 ">
+        <table class="table mt-4" id="tble">
             <caption>Food table</caption>
             <thead>
                 <tr>
@@ -57,7 +70,7 @@
                     <th scope="col">Food-description</th>
                 </tr>
             </thead>
-            <tbody id="table-body">
+            <tbody id="table1">
 
             </tbody>
         </table>

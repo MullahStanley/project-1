@@ -35,10 +35,10 @@ function forms(meals){
   <td>${meals.country}</td>
   <td>${meals.name}</td>
   <td>${meals.image}</td>
-  <td><button class="btn" style="background-colour:green;" id="edit">Review</button></td>
-  <td><button class="btn" style="background-colour:red;" id="delete">Review</button></td>
+  <td><button class="btn" style="background-colour:green;" id="edit">Add</button></td>
+  <td><button class="btn" style="background-colour:red;" id="delete">Remove</button></td>
   `
-  document.querySelector("#table-body").append(tableRow)
+  document.querySelector("#table-body").appendChild(tableRow)
   tableRow.querySelector("#edit").addEventListener("click",()=>{
     updateMeals(meals.id)
   })
@@ -47,6 +47,7 @@ function forms(meals){
     deleteRecord(meals.id)
   })
 }
+forms()
 //collect form data
 let formData;
 function gatherInfo(){
@@ -62,7 +63,7 @@ function gatherInfo(){
     postMeals()
   })
 }
-gatherInfo();
+gatherInfo(); 
 
 //POST
 function postMeals(){
@@ -76,6 +77,7 @@ function postMeals(){
   .then(response => response.json())
   .then(meals=>console.log(meals))
 }
+postMeals()
 //updating meals
 function updateMeals(){
   fetch(base_src,{
@@ -83,20 +85,22 @@ function updateMeals(){
     headers: {
       "Content-Type":"application/json"
     },
-    body : JSON.stringify(meals)
+    body : JSON.stringify({
+      meals})
   })
   .then(res=>res.json())
-  .then(data=>console.log(data))
+  .then(meals=>console.log(meals))
 }
+updateMeals()
 //deleting meals
 function deleteRecord(){
-  fetch(base_src,{
+  fetch(`${base_src/id}`,{
     method: "DELETE",
     headers:{
       "Content-Type": "application/json"
-    },
-    body: JSON.stringify(meals)
+    }
   })
   .then (res=> res.json())
-  .then (data=>console.log(data))
+  .then (meals=>console.log(meals))
 }
+deleteRecord()
