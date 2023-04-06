@@ -2,18 +2,29 @@ const base_src="http://localhost:3000/meals";
 function appendCarousel(meals){
     let div = document.createElement("div")
     div.innerHTML=`
-    <div class="w3-card-4" id="card">
-    <div class="w3-container w3-center">
-    <h2>${meals.name}</h2>
-    <h3>${meals.country}</h3>
-    <p>${meals.description}</p>
+    <div class="carousel-inner" style="padding:10px;">
+    <div class="carousel-item active">
+      <img src="${meals.image}" class="d-block w-100" alt="${meals.name}" id="img">
+      <div class="carousel-caption d-none d-md-block">
+        <h>${meals.country}.</h3>
+        <h5>${meals.name}.</h5>
+        <p>${meals.description}.</p>
+      </div>
     </div>
-    <img src="${meals.image}" alt="${meals.name}">
     </div>
     `
     document.querySelector("#div-1").appendChild(div)
+ }
+//prev and next
+function nextSlide(){
+  fetch("http://localhost:3000/meals/id")
+  .then(res=>res.json())
+  .then((meals)=>{
+    meals.forEach((id)=>{
+      prevSlide(id)
+    })
+  })
 }
-
 //fetching
 function fetchMeals(){
     fetch(base_src)
@@ -38,7 +49,7 @@ function forms(meals){
   <td><button class="btn" style="background-colour:green;" id="edit">Add</button></td>
   <td><button class="btn" style="background-colour:red;" id="delete">Remove</button></td>
   `
-  document.querySelector("#table-body").appendChild(tableRow)
+  document.querySelector("#table1").appendChild(tableRow)
   tableRow.querySelector("#edit").addEventListener("click",()=>{
     updateMeals(meals.id)
   })
