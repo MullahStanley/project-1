@@ -44,15 +44,16 @@ function forms(meals){
   })
   tableRow.querySelector("delete").addEventListener("click",()=>{
     tableRow.remove()
-    deleteRecord(product.id)
+    deleteRecord(meals.id)
   })
 }
 //collect form data
+let formData;
 function gatherInfo(){
   let form= document.querySelector("#form")
   form.addEventListener("submit",(event)=>{
     event.preventDefault()
-    let formData= {
+    formData= {
       name: event.target.name.value,
       country: event.target.country.value,
       image:event.target.image.value,
@@ -65,34 +66,36 @@ gatherInfo();
 
 //POST
 function postMeals(){
-  fetch(`${base_src}`,{
+  fetch(base_src,{
     method: "POST",
     headers: {
       "Content-Type":"application/json"
-    }
+    },
+    body: JSON.stringify(formData)
   })
   .then(response => response.json())
-  .then(data=>console.log(data))
+  .then(meals=>console.log(meals))
 }
 //updating meals
 function updateMeals(){
-  fetch(`${base_src}`,{
+  fetch(base_src,{
     method: "PATCH",
     headers: {
       "Content-Type":"application/json"
     },
-    body : JSON.stringify()
+    body : JSON.stringify(meals)
   })
   .then(res=>res.json())
   .then(data=>console.log(data))
 }
 //deleting meals
 function deleteRecord(){
-  fetch(`${base_src}`,{
+  fetch(base_src,{
     method: "DELETE",
     headers:{
       "Content-Type": "application/json"
-    }
+    },
+    body: JSON.stringify(meals)
   })
   .then (res=> res.json())
   .then (data=>console.log(data))
