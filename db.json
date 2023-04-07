@@ -1,74 +1,143 @@
 {
-    "meals":[
-        {
-            "id":"1",
-            "name":"UKRAINIAN BORSCHT ",
-            "country":"Ukraine",
-            "image":"https://wander-lush.org/wp-content/uploads/2022/11/UNESCO-food-culture-Ukrainian-Borscht.jpg",
-            "description":"Borscht is hearty and nourishing. It/'s commonly based on a meat stock combined with sauteed vegetables including cabbage, potatoes and tomatoes. Dill, bay leaves, marjoram, horseradish, ginger and even prunes might be used for flavour. Sometimes beef or fish is added for protein, while others prefer to keep the dish vegetarian.Ukraine is commonly considered the home of borscht. Every region or oblast has its own distinctive recipe  for example in Kyiv, lamb is often added while in Lviv, cooks often use Vienna sausage."
-        },
-        {
-            "id":"2",
-            "name":"BAGUETTE BREAD",
-            "country":"France",
-            "image":"https://wander-lush.org/wp-content/uploads/2022/12/UNESCO-food-culture-2022-French-Baguette-bread.jpg",
-            "description":"The baguette /- a long, thin baton of white bread /- is a symbol of France and one of the country/'s most beloved food items. It/'s a tradition that goes all the way back to the reign of King Louis XIV in the 18th cenury.Traditionally, a French baguette (Baguette de Tradition Française) has only four ingredients: wheat flour, water ,yeast, and salt. It is baked daily in bakeries or boulangeries and consumed with almost every meal. A good baguette is around 65 centimetres in length and has a crunchy crust."
-        },
-        {
-            "id":"3",
-            "name":"AL-MANSAF",
-            "country":"Jordan",
-            "image":"https://wander-lush.org/wp-content/uploads/2022/12/UNESCO-food-culture-2022-Jordan-Mansaf.jpg",
-            "description":"Mansaf or Al-Mansaf is the national dish of Jordan in the Middle East. It consists of lamb or chicken cooked in a rich sauce made from fermented yogurt with white rice or bulgur wheat.Mansaf traces its origins back to Bedouin culture. In the past, the end of inter-tribal conflicts would be marked only once leaders sacrificed an animal to prepare and eat Mansaf together. The dish continues to play an important socio-cultural role in Jordanian society even today."
-        },
-        {
-            "id":"4",
-            "name":"JOUMOU SOUP",
-            "country":"Haiti",
-            "image":"https://wander-lush.org/wp-content/uploads/2022/11/UNESCO-food-culture-Haiti-Joumou-soup-wikicommons.jpg",
-            "description":"Joumou is a perfect example of the connection between food and culture. In the Caribbean nation of Haiti, this soup is traditionally consumed on January 1 to celebrate the nation/'s independence and mark the beginning of a new calendar year. For Haitians, it/'s so much more than just a dish: Joumou is a symbol of freedom and liberation.When Haitians rose up against slavery /- staging the world/'s only successful slave revolt and eventually gaining independence for their nation in 1804 /- the soup was coopted by locals who started preparing it for their own families. Haitians previously deprived of eating Joumou reclaimed the recipe for themselves, and the soup came to symbolise the nation/'s defiance, resilience, and love of freedom."
-        },
-        {
-            "id":"5",
-            "name":"CEEBU JËN",
-            "country":"Senegal",
-            "image":"https://wander-lush.org/wp-content/uploads/2022/01/UNESCO-Culinary-Traditions-2022-Senegal-rice.jpg",
-            "description":"Ceebu jën (Thieboudienne) is the national dish of Senegal in West Africa. The recipe originated in fishing villages on Saint-Louis Island and is today eaten across the country and in other nations in the region, including Guinea-Bissau, Mali, Mauritania, and The Gambia."
-        },
-        {
-            "id":"6",
-            "name":"WASHOKU",
-            "country":"Japan",
-            "image":"https://wander-lush.org/wp-content/uploads/2020/12/UNESCO-Food-Heritage-CanvaPro-Japan-meal.jpg",
-            "description":"Japanese food is collectively referred to as Washoku. At its essence, it reflects a deep respect for nature, using natural, locally sourced ingredients such as rice, fish, vegetables and edible wild plants."
-        },
-        {
-            "id":"7",
-            "name":"TURKISH COFFEE",
-            "country":"Turkey",
-            "image":"https://wander-lush.org/wp-content/uploads/2020/12/UNESCO-Food-Heritage-CanvaPro-Turkish-coffee.jpg",
-            "description":"Coffee was first introduced to the Ottoman Empire in the 15th century. It was an instant hit. From that point on, the Ottomans controlled coffee trading routes and were responsible for spreading coffee throughout the empire."
-        },
-        {
-            "id":"8",
-            "name":"NSIMA",
-            "country":"Malawi",
-            "image":"https://wander-lush.org/wp-content/uploads/2019/03/UNESCO-food-collab-2-2.jpg",
-            "description":"In Malawi, it/'s normally eaten with two accompaniments: A protein-heavy dish, and a vegetable dish. The protein dish can be meat, fish or beans, while the vegetable dish is usually a type of dark leafy green, such as mustard or pumpkin leaves."
-        },
-        {
-            "id":"9",
-            "name":"IL-FTIRA",
-            "country":"Malta",
-            "image":"https://wander-lush.org/wp-content/uploads/2020/12/UNESCO-food-culture-CanvaPro-malta-bread.jpg",
-            "description":"The name ftira comes from the Arabic word for unleavened bread and the dish reflects the cultural exchange that has defined Malta/'s history. This bread is hand-shaped /- the process can/'t be replicated by a machine /- which makes it all the more special. Regional and seasonal ftira recipes use different ingredients to flavour the bread, such as olives or capers."
-        },
-        {
-            "id":"10",
-            "name":"PALOV",
-            "country":"Uzbekistan",
-            "image":"https://wander-lush.org/wp-content/uploads/2020/12/UNESCO-Food-Heritage-CanvaPro-Plov.jpg",
-            "description":"The dish consists of pilau rice with spices, vegetables, meat and sometimes raisins and berries cooked in a large pan, sometimes big enough to feed hundreds of people at weddings or funerals."
-        }
-    ]
+  "meals": [
+    {
+      "id": "1",
+      "name": "UKRAINIAN BORSCHT ",
+      "country": "Ukraine",
+      "image": "https://wander-lush.org/wp-content/uploads/2022/11/UNESCO-food-culture-Ukrainian-Borscht.jpg",
+      "description": "Borscht is hearty and nourishing. It/'s commonly based on a meat stock combined with sauteed vegetables including cabbage, potatoes and tomatoes. Dill, bay leaves, marjoram, horseradish, ginger and even prunes might be used for flavour. Sometimes beef or fish is added for protein, while others prefer to keep the dish vegetarian.Ukraine is commonly considered the home of borscht. Every region or oblast has its own distinctive recipe  for example in Kyiv, lamb is often added while in Lviv, cooks often use Vienna sausage."
+    },
+    {
+      "id": "2",
+      "name": "BAGUETTE BREAD",
+      "country": "France",
+      "image": "https://wander-lush.org/wp-content/uploads/2022/12/UNESCO-food-culture-2022-French-Baguette-bread.jpg",
+      "description": "The baguette /- a long, thin baton of white bread /- is a symbol of France and one of the country/'s most beloved food items. It/'s a tradition that goes all the way back to the reign of King Louis XIV in the 18th cenury.Traditionally, a French baguette (Baguette de Tradition Française) has only four ingredients: wheat flour, water ,yeast, and salt. It is baked daily in bakeries or boulangeries and consumed with almost every meal. A good baguette is around 65 centimetres in length and has a crunchy crust."
+    },
+    {
+      "id": "3",
+      "name": "AL-MANSAF",
+      "country": "Jordan",
+      "image": "https://wander-lush.org/wp-content/uploads/2022/12/UNESCO-food-culture-2022-Jordan-Mansaf.jpg",
+      "description": "Mansaf or Al-Mansaf is the national dish of Jordan in the Middle East. It consists of lamb or chicken cooked in a rich sauce made from fermented yogurt with white rice or bulgur wheat.Mansaf traces its origins back to Bedouin culture. In the past, the end of inter-tribal conflicts would be marked only once leaders sacrificed an animal to prepare and eat Mansaf together. The dish continues to play an important socio-cultural role in Jordanian society even today."
+    },
+    {
+      "id": "4",
+      "name": "JOUMOU SOUP",
+      "country": "Haiti",
+      "image": "https://wander-lush.org/wp-content/uploads/2022/11/UNESCO-food-culture-Haiti-Joumou-soup-wikicommons.jpg",
+      "description": "Joumou is a perfect example of the connection between food and culture. In the Caribbean nation of Haiti, this soup is traditionally consumed on January 1 to celebrate the nation/'s independence and mark the beginning of a new calendar year. For Haitians, it/'s so much more than just a dish: Joumou is a symbol of freedom and liberation.When Haitians rose up against slavery /- staging the world/'s only successful slave revolt and eventually gaining independence for their nation in 1804 /- the soup was coopted by locals who started preparing it for their own families. Haitians previously deprived of eating Joumou reclaimed the recipe for themselves, and the soup came to symbolise the nation/'s defiance, resilience, and love of freedom."
+    },
+    {
+      "id": "5",
+      "name": "CEEBU JËN",
+      "country": "Senegal",
+      "image": "https://wander-lush.org/wp-content/uploads/2022/01/UNESCO-Culinary-Traditions-2022-Senegal-rice.jpg",
+      "description": "Ceebu jën (Thieboudienne) is the national dish of Senegal in West Africa. The recipe originated in fishing villages on Saint-Louis Island and is today eaten across the country and in other nations in the region, including Guinea-Bissau, Mali, Mauritania, and The Gambia."
+    },
+    {
+      "id": "6",
+      "name": "WASHOKU",
+      "country": "Japan",
+      "image": "https://wander-lush.org/wp-content/uploads/2020/12/UNESCO-Food-Heritage-CanvaPro-Japan-meal.jpg",
+      "description": "Japanese food is collectively referred to as Washoku. At its essence, it reflects a deep respect for nature, using natural, locally sourced ingredients such as rice, fish, vegetables and edible wild plants."
+    },
+    {
+      "id": "7",
+      "name": "TURKISH COFFEE",
+      "country": "Turkey",
+      "image": "https://wander-lush.org/wp-content/uploads/2020/12/UNESCO-Food-Heritage-CanvaPro-Turkish-coffee.jpg",
+      "description": "Coffee was first introduced to the Ottoman Empire in the 15th century. It was an instant hit. From that point on, the Ottomans controlled coffee trading routes and were responsible for spreading coffee throughout the empire."
+    },
+    {
+      "id": "8",
+      "name": "NSIMA",
+      "country": "Malawi",
+      "image": "https://wander-lush.org/wp-content/uploads/2019/03/UNESCO-food-collab-2-2.jpg",
+      "description": "In Malawi, it/'s normally eaten with two accompaniments: A protein-heavy dish, and a vegetable dish. The protein dish can be meat, fish or beans, while the vegetable dish is usually a type of dark leafy green, such as mustard or pumpkin leaves."
+    },
+    {
+      "id": "9",
+      "name": "IL-FTIRA",
+      "country": "Malta",
+      "image": "https://wander-lush.org/wp-content/uploads/2020/12/UNESCO-food-culture-CanvaPro-malta-bread.jpg",
+      "description": "The name ftira comes from the Arabic word for unleavened bread and the dish reflects the cultural exchange that has defined Malta/'s history. This bread is hand-shaped /- the process can/'t be replicated by a machine /- which makes it all the more special. Regional and seasonal ftira recipes use different ingredients to flavour the bread, such as olives or capers."
+    },
+    {
+      "id": "10",
+      "name": "PALOV",
+      "country": "Uzbekistan",
+      "image": "https://wander-lush.org/wp-content/uploads/2020/12/UNESCO-Food-Heritage-CanvaPro-Plov.jpg",
+      "description": "The dish consists of pilau rice with spices, vegetables, meat and sometimes raisins and berries cooked in a large pan, sometimes big enough to feed hundreds of people at weddings or funerals."
+    },
+    {
+      "id": "2m1orwi"
+    },
+    {
+      "id": "xFrq_3L"
+    },
+    {
+      "id": "5LpGEHl"
+    },
+    {
+      "id": "c0AXmfe"
+    },
+    {
+      "id": "zCiZwdm"
+    },
+    {
+      "id": "BA57LsH"
+    },
+    {
+      "id": "bdDzyMk"
+    },
+    {
+      "id": "KnF0vlB"
+    },
+    {
+      "id": "GZvoB02"
+    },
+    {
+      "id": "qHAIrir"
+    },
+    {
+      "id": "PM2TM89"
+    },
+    {
+      "id": "Daru1V-"
+    },
+    {
+      "id": "GRyLDkY"
+    },
+    {
+      "id": "KbLXegp"
+    },
+    {
+      "id": "cz41lC-"
+    },
+    {
+      "id": "KD_uFIF"
+    },
+    {
+      "id": "Yqv25kR"
+    },
+    {
+      "id": "iRHoRYg"
+    },
+    {
+      "id": "8VBfEiv"
+    },
+    {
+      "id": "h_TmlHl"
+    },
+    {
+      "id": "tr3pMo-"
+    },
+    {
+      "id": "rFfs3ZG"
+    },
+    {
+      "id": "D5XYDWi"
+    }
+  ]
 }

@@ -6,34 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/b9ef00f2d4.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="table.css">
 </head>
 <body>
-    <section id="section">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="main.html">FoodCulture</a>
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+              <a class="nav-link" href="table.html">Form</a>
+            </div>
+        </div>
+      </nav>
+    <section>
         <form id="form">
-        <div>
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" required>
-        </div>
-        <div>
-            <label for="country" class="form-label">Country</label>
-            <input type="text" class="form-control" id="name" required>
-        </div>
-        <div>
-            <label for="image" class="form-label">Image</label>
-            <input type="url" class="form-control" id="name" required>
-        </div>
-        <div>
-            <label for="description" class="form-label">Description</label>
-            <input type="text" class="form-control" id="name" required>
-        </div>
-        <div>
-            <button class="button" type="submit" style="padding: 5px;">Add</button>
-        </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" class="form-control" id="country" required>
+            </div>
+            <div class="mb-3">
+                <label for="Food-name" class="form-label">Food-name</label>
+                <input type="text" class="form-control" id="Food-name" required>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="url" class="form-control" id="image" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" id="description" required>
+            </div>
+            <button type="submit" class="btn1">Submit</button>
         </form>
     </section>
     <section>
-        <table class="table mt-4" id="tble">
+        <table class="table mt-4" id="tble1">
             <caption>Food table</caption>
             <thead>
                 <tr>
@@ -42,6 +49,8 @@
                     <th scope="col">Name</th>
                     <th scope="col">Food-image</th>
                     <th scope="col">Food-description</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Remove</th>
                 </tr>
             </thead>
             <tbody id="table1">
