@@ -12,8 +12,7 @@ function tableAdd(meals) {
     <td><button class="btn" style="background-colour:red;" id="delete">Remove</button></td>
     `
     document.querySelector("#tble").appendChild(tableRow)
-    tableRow.querySelector("#edit").addEventListener("click", (e) => {
-      e.preventDefault()
+    tableRow.querySelector("#edit").addEventListener("click", () => {
       updateMeals()
     })
     tableRow.querySelector("#delete").addEventListener("click", () => {
@@ -71,7 +70,7 @@ fetchTable()
       body: JSON.stringify({})
     })
       .then(res => res.json())
-      .then(data => (data))
+      .then(data => data)
   }
   updateMeals()
   //deleting meals
