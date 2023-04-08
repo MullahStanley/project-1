@@ -39,10 +39,10 @@ fetchTable()
     form.addEventListener("submit", (e) => {
       e.preventDefault()
       formData = {
-        Country: e.target.country,
-        Food: e.target.name,
-        Image: e.target.image,
-        Description: e.target.description
+        Country: e.target.meals.country,
+        Food: e.target.meals.name,
+        Image: e.target.mealsimage,
+        Description: e.target.meals.description
       }
       postMeals()
     })
