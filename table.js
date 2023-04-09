@@ -1,6 +1,6 @@
 //table for displaying data
 function tableAdd(meals) {
-    let tableRow = document.createElement("tr")
+  let tableRow = document.createElement("tr")
     tableRow.id = "table-row"
     tableRow.innerHTML = `
     <th scope="row">${meals.id}</th>
@@ -12,13 +12,11 @@ function tableAdd(meals) {
     <td><button class="btn" style="background-colour:red;" id="delete">Remove</button></td>
     `
     document.querySelector("#tble").appendChild(tableRow)
-    tableRow.querySelector("#edit").addEventListener("click", () => {
-      updateMeals()
-    })
+    tableRow.querySelector("#edit").addEventListener("click",postMeals)
     tableRow.querySelector("#delete").addEventListener("click", (e) => {
       e.preventDefault()
       tableRow.remove()
-      deleteRecord(meals.id)
+      deleteRecord(meals)
     })
   }
   //fetching
@@ -35,16 +33,28 @@ fetchTable()
   //collect form data
   let formData;
   function gatherInfo() {
-    const form = document.querySelector("#btn1")
+    const form = document.querySelector("#form")
     //adding event listener for submitting form
     form.addEventListener("submit", (e) => {
       e.preventDefault()
-      formData = [{
+      const name= document.querySelector("#foodName");
+      const country= document.querySelector("#country");
+      const image= document.querySelector("#image");
+      const description= document.querySelector("#description");
+      //filling formData 
+      formData= {
+        country: country.value,
+        foodName: name.value,
+        image:image.value,
+        description: description.value
+      }
+      /*formData = {
         country: e.target.country.value,
-        foodName: e.target.meal.foodName.value,
+        foodName: e.target.foodName.value,
         image: e.target.image.value,
         description: e.target.description.value
-      }]
+      }*/
+
       postMeals(formData)
     })
   }
@@ -75,8 +85,8 @@ fetchTable()
       .then((data) => (data))
   }
   //deleting meals
-  function deleteRecord(id) {
-    fetch("http://localhost:3000/meals", {
+  function deleteRecord() {
+    fetch("http://localhost:3000/meals/id", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
