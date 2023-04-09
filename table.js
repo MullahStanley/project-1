@@ -15,9 +15,10 @@ function tableAdd(meals) {
     tableRow.querySelector("#edit").addEventListener("click", () => {
       updateMeals()
     })
-    tableRow.querySelector("#delete").addEventListener("click", () => {
-      tableRow.remove(meals.id)
-      deleteRecord()
+    tableRow.querySelector("#delete").addEventListener("click", (e) => {
+      e.preventDefault()
+      tableRow.remove()
+      deleteRecord(meals.id)
     })
   }
   //fetching
@@ -33,17 +34,18 @@ function fetchTable() {
 fetchTable()
   //collect form data
   let formData;
-  function gatherInfo(meals) {
+  function gatherInfo() {
     const form = document.querySelector("#btn1")
+    //adding event listener for submitting form
     form.addEventListener("submit", (e) => {
       e.preventDefault()
       formData = [{
-        country: e.target.meals[2].value,
-        foodName: e.target.meals[1].value,
-        image: e.target.meals[3].value,
-        description: e.target.meals[4].value
+        country: e.target.country.value,
+        foodName: e.target.meal.foodName.value,
+        image: e.target.image.value,
+        description: e.target.description.value
       }]
-      postMeals(meals)
+      postMeals(formData)
     })
   }
   gatherInfo()
@@ -57,7 +59,7 @@ fetchTable()
       body: JSON.stringify(formData)
     })
       .then(response => response.json())
-      .then((formData=>console.log(console.log(formData))))
+      .then(data=>(data))
   }
   postMeals()
   //updating meals
@@ -70,11 +72,10 @@ fetchTable()
       body: JSON.stringify({formData})
     })
       .then(res => res.json())
-      .then(data => (data))
+      .then((data) => (data))
   }
-  updateMeals()
   //deleting meals
-  function deleteRecord() {
+  function deleteRecord(id) {
     fetch("http://localhost:3000/meals", {
       method: "DELETE",
       headers: {
@@ -84,4 +85,3 @@ fetchTable()
       .then(res => res.json())
       .then(data => (data))
   }
-  deleteRecord()
