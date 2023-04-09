@@ -16,7 +16,7 @@ function tableAdd(meals) {
       updateMeals()
     })
     tableRow.querySelector("#delete").addEventListener("click", () => {
-      tableRow.remove()
+      tableRow.remove(meals.id)
       deleteRecord()
     })
   }
@@ -33,17 +33,17 @@ function fetchTable() {
 fetchTable()
   //collect form data
   let formData;
-  function gatherInfo() {
+  function gatherInfo(meals) {
     const form = document.querySelector("#btn1")
     form.addEventListener("submit", (e) => {
       e.preventDefault()
-      formData = {
-        Country: e.target.meals.country,
-        Food: e.target.meals.name,
-        Image: e.target.mealsimage,
-        Description: e.target.meals.description
-      }
-      postMeals()
+      formData = [{
+        country: e.target.meals[2].value,
+        foodName: e.target.meals[1].value,
+        image: e.target.meals[3].value,
+        description: e.target.meals[4].value
+      }]
+      postMeals(meals)
     })
   }
   gatherInfo()
@@ -57,7 +57,7 @@ fetchTable()
       body: JSON.stringify(formData)
     })
       .then(response => response.json())
-      .then(meals => (meals))
+      .then((formData=>console.log(console.log(formData))))
   }
   postMeals()
   //updating meals
@@ -70,7 +70,7 @@ fetchTable()
       body: JSON.stringify({formData})
     })
       .then(res => res.json())
-      .then(data => data)
+      .then(data => (data))
   }
   updateMeals()
   //deleting meals
@@ -79,11 +79,9 @@ fetchTable()
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
-      },
-      body: JSON.stringify()
+      }
     })
       .then(res => res.json())
       .then(data => (data))
   }
   deleteRecord()
-  
