@@ -12,11 +12,12 @@ function tableAdd(meals) {
     <td><button class="btn" style="background-colour:red;" id="delete">Remove</button></td>
     `
     document.querySelector("#tble").appendChild(tableRow)
-    tableRow.querySelector("#edit").addEventListener("click",postMeals)
-    tableRow.querySelector("#delete").addEventListener("click", (e) => {
-      e.preventDefault()
+    tableRow.querySelector("#edit").addEventListener("click",()=>{
+      updateMeals(meals.id)
+    })
+    tableRow.querySelector("#delete").addEventListener("click", () => {
       tableRow.remove()
-      deleteRecord(meals)
+      deleteRecord(meals.id)
     })
   }
   //fetching
@@ -55,6 +56,7 @@ function gatherInfo() {
       }*/
 
       postMeals(formData)
+      tableAdd()
     })
   }
   gatherInfo()
@@ -68,19 +70,12 @@ function gatherInfo() {
       body: JSON.stringify(formData)
     })
       .then(response => response.json())
-      .then(meals => {
-        // Fill the input fields of the form with the data to edit
-        document.querySelector("#id").value = `${meals.id}`;
-        document.querySelector("#foodName").value = `${meals.name}`;
-        document.querySelector("#country").value = `${meals.country}`;
-        document.querySelector("#image").value = `${meals.image}`;
-        document.querySelector("#description").value = `${meals.description}`;
-      })
+      .then(products => console.log(products))
   }
   postMeals()
   //updating meals
-  function updateMeals() {
-    fetch("http://localhost:3000/meals", {
+  function updateMeals(id) {
+    fetch(`http://localhost:3000/meals/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -88,15 +83,16 @@ function gatherInfo() {
       body: JSON.stringify({formData})
     })
       .then(res => res.json())
-      .then((formData) => console.log(formData))
+      .then((data) => console.log(data))
   }
   //deleting meals
-  function deleteRecord() {
-    fetch("http://localhost:3000/meals/id", {
+  function deleteRecord(id) {
+    fetch(`http://localhost:3000/meals/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
       }
     })
       .then(res => res.json())
+      .then(data=> console.log(data))
   }
